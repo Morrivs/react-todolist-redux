@@ -1,6 +1,6 @@
 import type React from "react";
 import { useDispatch, useSelector} from "react-redux"
-import { type AppDispatch, type RootState} from "../App/store"
+import { type AppDispatch, type RootState} from "../app/store"
 import { addTodo, removeTodo } from "../features/todos/todoActions";
 import { useState } from "react";
 
@@ -13,6 +13,11 @@ const TodoList:React.FC = () => {
         eat: "🍔",
         sleep: "🌑",
         exercise: "🏋️‍♂️"
+    }
+
+    type Todo = {
+        id: number;
+        text: string;
     }
 
     const handleAddTodo = () => {
@@ -43,7 +48,7 @@ const TodoList:React.FC = () => {
             />
             <ul>
                 {
-                    todos.map((todo)=>(
+                    todos.map((todo:Todo)=>(
                         <li key={todo.id} onClick={()=>handleRemoveTodo(todo.id)}>
                             {todo.text}
                         </li>
