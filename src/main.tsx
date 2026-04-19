@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import TodoList from '../src/components/TodoList'
 import { Provider } from 'react-redux'
-import { store } from './App/store'
+import { store } from './app/store'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
